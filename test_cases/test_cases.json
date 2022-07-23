@@ -6,11 +6,61 @@
     "1":"Go to Home page of Silicon Sofas",
     "2":"Click On sale Navigation bar category",
     "3":"Click any product at that page",
-    "4":"lick the icon to add the product to the cart",
+    "4":"Click the icon to add the product to the cart",
     "5":"Proceed to Checkout",
     "6":"Enter the promocode for the item from On sale category"
   },
   "Expected result":"No additional discounts or promotion codes are applied for items from the On sale category."
-},
-
+}
+,
 {
+  "TestCase_id":"2",
+  "Title":"No promotion codes can be applied to the items from the New arrivals category",
+  "Steps":
+  {
+    "1":"Go to Home page of Silicon Sofas",
+    "2":"Click New Arrivals Navigation bar category",
+    "3":"Click any product at that page",
+    "4":"Click the icon to add the product to the cart",
+    "5":"Proceed to Checkout",
+    "6":"Enter the promocode for the item from New arrivals category"
+  },
+  "Expected result":"No promotion codes are applied to the items from the New arrivals category, the text “Not applicable” should appear next to the price"
+}
+,
+{
+  "TestCase_id":"3",
+  "Title":"The selected number of products should be added to the cart after adding a praticular quantity of a product to the cart",
+  "Steps":
+  {
+    "1":"Go to Home page of Silicon Sofas",
+    "2":"Click on any Navigation bar category",
+    "3":"Click any product at that page",
+    "4":"Click the icon to add the product to the cart at the Product detail page",
+    "5":"Change the quantity of the product to any number more than 1"
+  },
+  "Expected result":"The item is added to the Cart, The correct number of the items is added to the Cart."
+}
+,
+{
+  "TestCase_id":"4",
+  "Title":"No items in the Cart” message should be displayed after user has deleted all items from the Cart",
+  "Steps":
+  {
+    "GIVEN":"user is on the Cart page",
+    "WHEN":"user adds no products to the Cart",
+  },
+  "Expected result THEN":"No items in the Cart message should be displayed"
+}
+,
+{
+  "TestCase_id":"5",
+  "Title":"The Total price should be changed respectively after deleting the product from the Cart",
+  "Steps":
+  {
+    "GIVEN":"user is on the Cart page",
+    "WHEN":"there are some products in the Cart",
+    "AND":"user clicks X button next to the price",
+  },
+  "Expected result_THEN":"the Total price should change respectively (to 0?)"
+}
