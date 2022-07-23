@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "ba218de5-e618-453a-8789-f46d6acd06e8",
+		"name": "Test Rail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Create a new project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"project_id\", jsonData.id);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"This is my first project for the course\",\r\n\t\"announcement\": \"This is the first description for the project\",\r\n\t\"show_announcement\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}//api/v2/add_project",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"",
+								"api",
+								"v2",
+								"add_project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new project Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"pm.environment.set(\"project_id\", jsonData.id);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"This is my first project for the course\",\r\n\t\"announcement\": \"This is the first description for the project\",\r\n\t\"show_announcement\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}//api/v2/add_project",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"",
+								"api",
+								"v2",
+								"add_project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"This is an updated project\",\r\n\t\"announcement\": \"This is the description for the updated project\",\r\n\t\"show_announcement\": true,\r\n     \"suite_mode\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v2/update_project/{{project_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"update_project",
+								"{{project_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v2/delete_project/{{project_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"delete_project",
+								"{{project_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test cases",
+			"item": [
+				{
+					"name": "get info about test case",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"section_id\", jsonData.section_id);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v2/get_case/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"get_case",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create test case",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"This is a test case first\",\r\n  \"type_id\": 1,\r\n  \"priority_id\": 3,\r\n  \"estimate\": \"3m\",\r\n  \"refs\": \"RF-1, RF-2\",\r\n  \"custom_steps_separated\": [\r\n    {\r\n      \"content\": \"Go to Home page of Silicon Sofas\",\r\n      \"expected\": \"The Home page is displayed\"\r\n    },\r\n    {\r\n      \"content\": \"Enter no characters into the Search field.\",\r\n      \"expected\": \"The placeholder for the Search field should appear. The text should be the following:Search for your perfect sofa here\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v2/add_case/{{section_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"add_case",
+								"{{section_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create test case 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"This is a test case second\",\r\n  \"type_id\": 1,\r\n  \"priority_id\": 2,\r\n  \"estimate\": \"3m\",\r\n  \"refs\": \"RF-15, RF-23\",\r\n  \"custom_steps_separated\": [\r\n    {\r\n      \"content\": \"Go to Home page of Silicon Sofas\",\r\n      \"expected\": \"The Home page is displayed\"\r\n    },\r\n    {\r\n      \"content\": \"Click on any category of the Navigation bar\",\r\n      \"expected\": \"The products of the relevant category are displayed\"\r\n    },\r\n    {\r\n      \"content\": \"Click on any product at the result page\",\r\n      \"expected\": \"The Product detail page with the description of the product should appear\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v2/add_case/{{section_id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"add_case",
+								"{{section_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "tetianapulia@gmail.com",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "xjz5fzY3QWnPiAQ$",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}
