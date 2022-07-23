@@ -13,3 +13,50 @@
   "Expected result":"The quantity is increased after clicking + at the quantity picker, the quantity is decreased after clicking - at the quantity picker",
   "Actual result":"The quantity is increased after clicking - at the quantity picker. The quantity is decreased after clicking + at the quantity picker"
 }
+,
+{
+  "Bug_id":"2",
+  "Priority":"High",
+  "Summary":"[Cart page]  404 Page not found error happens after clicking any item added to the Cart",
+  "Steps to reproduce":
+  {
+    "1":"Go to the Home page of Silicon Sofas",
+    "2":"Click on any Navigation bar category",
+    "3":"Click on any product at the result page",
+    "4":"Click the icon to add the product to the cart at the Product detail page",
+    "5":"Click any item in the Cart"
+  },
+  "Expected result":"The user is redirected to Product details page after clicking any item added to the cart",
+  "Actual result":"Page Not found error is displayed. The text is the following: You just hit a route that doesn't exist..."
+}
+,
+{
+  "Bug_id":"3",
+  "Priority":"High",
+  "Summary":"[Cart page] The full price without discount is displayed as Total price for the items of the On sale category",
+  "Steps to reproduce":
+  {
+    "1":"Go to the Home page of Silicon Sofas",
+    "2":"Click On sale category in the Navigation",
+    "3":"Click on any product at the result page",
+    "4":"Click the icon to add the product to the cart at the Product detail page",
+    "5":"Go to the Cart and pay attention to the Total price."
+  },
+  "Expected result":"The Total price of the item from the On sale category is displayed with discount",
+  "Actual result":"The Total price of the item from the On sale category is displayed as full price"
+}
+,
+{
+  "Bug_id":"4",
+    "Priority":"High",
+    "Summary":"[Product Details page] User is redirected to the Home page instead of Category page after clicking any category from the Product Detail page",
+    "Steps to reproduce":
+    {
+      "1":"Go to the Home page of Silicon Sofas",
+      "2":"Click on any Navigation bar category",
+      "3":"Click on any product at the result page",
+      "4":"Being on the Product Details page, click title of any category from the Navigation bar",
+    },
+    "Expected result":"User is redirected to the Category page",
+    "Actual result":"User is redirected to the Home page"
+}
