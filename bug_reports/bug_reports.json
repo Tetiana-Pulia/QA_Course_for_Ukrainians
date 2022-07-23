@@ -60,3 +60,19 @@
     "Expected result":"User is redirected to the Category page",
     "Actual result":"User is redirected to the Home page"
 }
+,
+{
+  "Bug_id":"5",
+    "Priority":"High",
+    "Summary":"[Checkout page] The Total and Subtotal price is not calculated in accordance with total quantity of the product",
+    "Steps to reproduce":
+    {
+      "1":"Go to the Home page of Silicon Sofas",
+      "2":"Add any item to the Cart",
+      "3":"Change the item quantity to more than 1",
+      "4":"Click Proceed to checkout link",
+      "5":"Observe the Total and Subtotal price",
+    },
+    "Expected result":"Total and Subtotal price reflects the quantity of item",
+    "Actual result":"Total  and Subtotal price is calculated as for the quantity = 1. although the quantity is more than 1"
+}
