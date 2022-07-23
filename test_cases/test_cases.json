@@ -1,0 +1,16 @@
+{
+  "TestCase_id":"1",
+  "Title":"No additional discounts or promotion codes can be applied for items from the On sale category",
+  "Steps":
+  {
+    "1":"Go to Home page of Silicon Sofas",
+    "2":"Click On sale Navigation bar category",
+    "3":"Click any product at that page",
+    "4":"lick the icon to add the product to the cart",
+    "5":"Proceed to Checkout",
+    "6":"Enter the promocode for the item from On sale category"
+  },
+  "Expected result":"No additional discounts or promotion codes are applied for items from the On sale category."
+},
+
+{
