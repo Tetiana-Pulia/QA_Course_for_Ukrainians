@@ -1,0 +1,15 @@
+{
+  "Bug_id":"1",
+  "Priority":"High",
+  "Summary":"[Cart page] The + and - symbols at the quantity picker are mixed up",
+  "Steps to reproduce":
+  {
+    "1":"Go to the Home page of Silicon Sofas",
+    "2":"Click on any Navigation bar category",
+    "3":"Click on any product at the result page",
+    "4":"Click the icon to add the product to the cart at the Product detail page",
+    "5":"Change the quantity of the product by using quantity picker (to increase quantity - use +, to decrease quantity - use -)"
+  },
+  "Expected result":"The quantity is increased after clicking + at the quantity picker, the quantity is decreased after clicking - at the quantity picker",
+  "Actual result":"The quantity is increased after clicking - at the quantity picker. The quantity is decreased after clicking + at the quantity picker"
+}
